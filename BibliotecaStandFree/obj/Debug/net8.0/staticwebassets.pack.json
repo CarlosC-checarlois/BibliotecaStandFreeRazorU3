@@ -1,0 +1,373 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BibliotecaStandFree.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BibliotecaStandFree.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\css\\styles_administrador_detalle_orden.css",
+      "PackagePath": "staticwebassets\\css\\styles_administrador_detalle_orden.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\css\\styles_administrador_tablas.css",
+      "PackagePath": "staticwebassets\\css\\styles_administrador_tablas.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\cartas\\cafe_carta.png",
+      "PackagePath": "staticwebassets\\images\\cartas\\cafe_carta.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\cartas\\capuccino_carta.png",
+      "PackagePath": "staticwebassets\\images\\cartas\\capuccino_carta.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\cartas\\cartas_imagen_cafe.png",
+      "PackagePath": "staticwebassets\\images\\cartas\\cartas_imagen_cafe.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\cartas\\latte_carta.png",
+      "PackagePath": "staticwebassets\\images\\cartas\\latte_carta.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\generales\\Logo_cafe.png",
+      "PackagePath": "staticwebassets\\images\\generales\\Logo_cafe.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\generales\\Logo_cafe_small.png",
+      "PackagePath": "staticwebassets\\images\\generales\\Logo_cafe_small.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\generales\\icono_whatssap.png",
+      "PackagePath": "staticwebassets\\images\\generales\\icono_whatssap.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\index\\index_imagen_cafe.png",
+      "PackagePath": "staticwebassets\\images\\index\\index_imagen_cafe.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\index\\index_imagen_carta.png",
+      "PackagePath": "staticwebassets\\images\\index\\index_imagen_carta.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\index\\index_imagen_fondo_1 - copia.png",
+      "PackagePath": "staticwebassets\\images\\index\\index_imagen_fondo_1 - copia.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\index\\index_imagen_fondo_1.png",
+      "PackagePath": "staticwebassets\\images\\index\\index_imagen_fondo_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\index\\index_imagen_inicio.png",
+      "PackagePath": "staticwebassets\\images\\index\\index_imagen_inicio.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\index\\index_imagen_libros.png",
+      "PackagePath": "staticwebassets\\images\\index\\index_imagen_libros.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\libros\\cartas_imagen_libros.png",
+      "PackagePath": "staticwebassets\\images\\libros\\cartas_imagen_libros.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\libros\\cien_anios_de_soledad.png",
+      "PackagePath": "staticwebassets\\images\\libros\\cien_anios_de_soledad.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\libros\\el_principito.png",
+      "PackagePath": "staticwebassets\\images\\libros\\el_principito.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\libros\\gaya_ciencia_libro.png",
+      "PackagePath": "staticwebassets\\images\\libros\\gaya_ciencia_libro.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\images\\libros\\quijote.png",
+      "PackagePath": "staticwebassets\\images\\libros\\quijote.png"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\js\\modal.js",
+      "PackagePath": "staticwebassets\\js\\modal.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\videos\\Cafe_Video.mp4",
+      "PackagePath": "staticwebassets\\videos\\Cafe_Video.mp4"
+    },
+    {
+      "Id": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\wwwroot\\videos\\Libros_Video.mp4",
+      "PackagePath": "staticwebassets\\videos\\Libros_Video.mp4"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BibliotecaStandFree.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BibliotecaStandFree.props",
+      "PackagePath": "build\\BibliotecaStandFree.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BibliotecaStandFree.props",
+      "PackagePath": "buildMultiTargeting\\BibliotecaStandFree.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BibliotecaStandFree.props",
+      "PackagePath": "buildTransitive\\BibliotecaStandFree.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

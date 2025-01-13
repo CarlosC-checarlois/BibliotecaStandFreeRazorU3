@@ -1,0 +1,139 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|c:\\users\\carlos\\desktop\\variados\\portafolio\\bibliotecastandfreerazor\\bibliotecastandfree\\bibliotecastandfree\\bibliotecastandfree.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|solutionrelative:bibliotecastandfree\\bibliotecastandfree.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|c:\\users\\carlos\\desktop\\variados\\portafolio\\bibliotecastandfreerazor\\bibliotecastandfree\\bibliotecastandfree\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|solutionrelative:bibliotecastandfree\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|c:\\users\\carlos\\desktop\\variados\\portafolio\\bibliotecastandfreerazor\\bibliotecastandfree\\bibliotecastandfree\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|solutionrelative:bibliotecastandfree\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|c:\\users\\carlos\\desktop\\variados\\portafolio\\bibliotecastandfreerazor\\bibliotecastandfree\\bibliotecastandfree\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|solutionrelative:bibliotecastandfree\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|c:\\users\\carlos\\desktop\\variados\\portafolio\\bibliotecastandfreerazor\\bibliotecastandfree\\bibliotecastandfree\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|solutionrelative:bibliotecastandfree\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|c:\\users\\carlos\\desktop\\variados\\portafolio\\bibliotecastandfreerazor\\bibliotecastandfree\\bibliotecastandfree\\pages\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|solutionrelative:bibliotecastandfree\\pages\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|c:\\users\\carlos\\desktop\\variados\\portafolio\\bibliotecastandfreerazor\\bibliotecastandfree\\bibliotecastandfree\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D3AD0633-C1D7-4886-B78B-EF130EBB41B9}|BibliotecaStandFree\\BibliotecaStandFree.csproj|solutionrelative:bibliotecastandfree\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BibliotecaStandFree",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\BibliotecaStandFree.csproj",
+              "RelativeDocumentMoniker": "BibliotecaStandFree\\BibliotecaStandFree.csproj",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\BibliotecaStandFree.csproj",
+              "RelativeToolTip": "BibliotecaStandFree\\BibliotecaStandFree.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-12T14:03:07.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "BibliotecaStandFree\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\Properties\\launchSettings.json",
+              "RelativeToolTip": "BibliotecaStandFree\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAA8AAAAAAAAAAIBJwAUAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-11T13:45:30.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\Program.cs",
+              "RelativeDocumentMoniker": "BibliotecaStandFree\\Program.cs",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\Program.cs",
+              "RelativeToolTip": "BibliotecaStandFree\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T13:43:22.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaStandFree\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\Pages\\Index.cshtml",
+              "RelativeToolTip": "BibliotecaStandFree\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-11T13:35:55.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml.css",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\Pages\\Shared\\_Layout.cshtml.css",
+              "RelativeDocumentMoniker": "BibliotecaStandFree\\Pages\\Shared\\_Layout.cshtml.css",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\Pages\\Shared\\_Layout.cshtml.css",
+              "RelativeToolTip": "BibliotecaStandFree\\Pages\\Shared\\_Layout.cshtml.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-11T13:06:51.351Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\Pages\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaStandFree\\Pages\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\Pages\\_ViewStart.cshtml",
+              "RelativeToolTip": "BibliotecaStandFree\\Pages\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-11T13:06:22.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "BibliotecaStandFree\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Carlos\\Desktop\\Variados\\Portafolio\\BibliotecaStandFreeRazor\\BibliotecaStandFree\\BibliotecaStandFree\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "BibliotecaStandFree\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAM8AAAAAAAAAAIBJwBwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-11T13:05:55.332Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

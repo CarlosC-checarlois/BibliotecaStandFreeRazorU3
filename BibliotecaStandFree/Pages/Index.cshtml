@@ -1,0 +1,415 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model IndexModel
+@{
+    ViewData["Title"] = "Cafetería StandFree";
+}
+
+@section stylesheets_superiores {
+    <link rel="stylesheet" href="~/css/styles.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        .hr-container {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hr-container::before {
+            content: '• • • • •';
+            font-size: 50px;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6c683a", endColorstr="#3d2222", GradientType=1);
+            margin-right: 20px; /* Espaciado entre los puntos y la línea */
+        }
+
+        hr {
+            border: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #bada55;
+            margin: 0;
+        }
+
+        .btn-wsp {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background: #fff;
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            transition: all 300ms ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-wsp:hover {
+            background: #d0ffd9;
+        }
+
+        .btn-wsp img {
+            width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+            height: 100%; /* Hace que la imagen ocupe toda la altura del contenedor */
+            object-fit: cover; /* Ajusta la imagen para llenar completamente el contenedor sin distorsionar */
+            border-radius: 50%; /* Mantiene el borde redondeado de la imagen */
+        }
+
+        @@media only screen and (min-width: 320px) and (max-width: 768px) {
+        .btn-wsp {
+            width: 63px;
+            height: 63px;
+        }
+
+        .btn-wsp img {
+            width: 100%; /* Ajusta el tamaño para que llene el nuevo tamaño del botón */
+            height: 100%; /* Ajusta el tamaño para que llene el nuevo tamaño del botón */
+        }
+        }
+
+    </style>
+    <style>
+        /* Contenedor del carrito */
+        .carrito-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Texto del carrito (visible en pantallas pequeñas y medianas) */
+        .carrito-texto {
+            display: none; /* Oculto por defecto */
+            font-size: 16px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Ícono del carrito (visible por defecto en pantallas grandes) */
+        .carrito-icono {
+            display: none; /* Oculto por defecto */
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 20px;
+            position: relative;
+        }
+
+        /* Media query para pantallas pequeñas y medianas (≤ 992px) */
+        @@media (max-width: 992px) {
+        .carrito-texto {
+            display: inline-block; /* Mostrar texto */
+        }
+
+        .carrito-icono {
+            display: none; /* Ocultar ícono */
+        }
+        }
+
+        /* Media query para pantallas grandes (> 992px) */
+        @@media (min-width: 993px) {
+        .carrito-texto {
+            display: inline-block;
+        }
+
+        .carrito-icono {
+            display: none; /* Ocultar ícono */
+        }
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .bg-secondary {
+            background-color: #6c757d !important;
+        }
+
+        .bg-warning {
+            background-color: #ffe8b6 !important;
+        }
+
+        .text-dark {
+            color: #343a40 !important;
+        }
+    </style>
+    <style>
+        /* Contenedor de mensajes flotantes */
+        .floating-messages-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            max-width: 320px;
+            font-family: 'Georgia', serif; /* Fuente más amigable */
+        }
+
+        /* Estilo base para los mensajes */
+        .floating-message {
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(to bottom, #fff9f0, #fff3e6); /* Fondo cálido */
+            opacity: 0; /* Por defecto invisible */
+            transform: translateY(-20px); /* Posición inicial para animación */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            border: 1px solid #d6ccc2; /* Borde suave */
+        }
+
+
+        /* Animación de entrada (fade-in) */
+        .floating-message.fade-in {
+            opacity: 1;
+            transform: translateY(0); /* Volver a la posición original */
+        }
+
+        /* Animación de salida (fade-out) */
+        .floating-message.fade-out {
+            opacity: 0;
+            transform: translateY(-20px); /* Desplazar hacia arriba al salir */
+        }
+
+        .floating-message-success {
+            background: linear-gradient(to bottom, #fbeec1, #f5d19a); /* Gradiente cálido estilo cafetería */
+            color: #5c3d2e; /* Texto en marrón oscuro */
+            border: 1px solid #e5b887; /* Borde marrón suave */
+            box-shadow: 0px 4px 6px rgba(92, 61, 46, 0.3); /* Sombra para dar profundidad */
+        }
+
+        /* Efecto hover para el mensaje de éxito */
+        .floating-message-success:hover {
+            background: linear-gradient(to bottom, #f5d19a, #fbeec1); /* Invertir el gradiente al pasar */
+            box-shadow: 0px 6px 10px rgba(92, 61, 46, 0.5); /* Aumentar la sombra al pasar */
+        }
+
+        .floating-message-error {
+            background: linear-gradient(to bottom, #fce4e4, #f8b8b8); /* Gradiente de tonos rosados suaves */
+            color: #8b1e24; /* Texto en un rojo marrón oscuro */
+            border: 1px solid #e78d8d; /* Borde rojo suave */
+            box-shadow: 0px 4px 6px rgba(139, 30, 36, 0.3); /* Sombra para dar profundidad */
+            font-family: 'Arial', sans-serif; /* Fuente profesional */
+            padding: 15px;
+            border-radius: 8px; /* Bordes más redondeados */
+            animation: shake 0.3s ease-in-out; /* Animación de sacudida suave */
+        }
+
+        /* Hover Effect */
+        .floating-message-error:hover {
+            background: linear-gradient(to bottom, #f8b8b8, #fce4e4); /* Invertir gradiente al pasar */
+            box-shadow: 0px 6px 10px rgba(139, 30, 36, 0.5); /* Aumentar la sombra */
+        }
+
+        .floating-message-warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+
+        .floating-message-info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        /* Botón de cierre */
+        .floating-message .close-btn {
+            margin-left: 15px;
+            color: inherit;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1;
+            background: none;
+            border: none;
+        }
+
+        .floating-message .close-btn:hover {
+            opacity: 0.7;
+        }
+
+        @@keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-5px);
+            }
+            50% {
+                transform: translateX(5px);
+            }
+            75% {
+                transform: translateX(-5px);
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+}
+<!-- Contenido principal -->
+<section class="hscero">
+    <video
+        src="~/videos/Cafe_Video.mp4"
+        autoplay
+        loop
+        muted
+        playsinline
+        class="video-inicio"
+        style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 8px;">
+    </video>
+    <p>
+        Bienvenido a nuestra cafetería-librería, un espacio donde los libros y el café se combinan para brindarte un servicio de calidad y acogedor.
+    </p>
+</section>
+<div class="hr-container"></div>
+
+<section class="content_h1">
+    <span id="services-title" style="
+        font-size: 6vw;
+        background: -webkit-linear-gradient(#b5940f, #ffd6b5);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Dancing Script', cursive;">
+        Nuestros servicios
+    </span>
+</section>
+
+<section class="content">
+    <div class="card">
+        <img
+            src="~/images/index/index_imagen_libros.png"
+            alt="Imagen de Libros"
+            onclick="openModal(); currentSlide(2)"/>
+        <p>Explora nuestra extensa colección de libros mientras disfrutas de tu café favorito.</p>
+        <a asp-page="/Libros">
+            <div id="btn-ver-mas-libros" class="boton">Ver más</div>
+        </a>
+    </div>
+    <div class="card">
+        <img
+            src="~/images/index/index_imagen_cafe.png"
+            alt="Imagen de Café"
+            onclick="openModal(); currentSlide(3)"/>
+        <p>Nuestra carta ofrece una selección especial de cafés de alta calidad y snacks deliciosos.</p>
+        <a asp-page="/Cartas">
+            <div id="btn-ver-mas-cafe" class="boton">Ver más</div>
+        </a>
+    </div>
+</section>
+
+<div class="hr-container"></div>
+
+<section class="vision_hero">
+    <div class="vision_quienes_somos">
+        <p class="vision_p_hero">
+            <span class="vision_h3_span">¿Quiénes somos?</span>
+            En StandFree, creemos en la magia de la conexión entre la literatura y el café. Fundada en 2024,
+            nuestra misión es ofrecer un espacio donde las personas puedan disfrutar de una buena lectura
+            acompañada de una taza de café cuidadosamente seleccionada.
+            <br><br>
+            Nuestra cafetería-librería es un lugar para relajarse, aprender y compartir.
+        </p>
+    </div>
+
+    <div class="vision_contenedor_dos_columnas">
+        <div class="vision_columna">
+            <p class="vision_p_hero">
+                <span class="vision_h3_span">Visión</span>
+                Ser reconocidos como un referente cultural y gastronómico en la ciudad.
+            </p>
+        </div>
+        <div class="vision_columna">
+            <p class="vision_p_hero">
+                <span class="vision_h3_span">Misión</span>
+                Brindar un espacio acogedor donde la literatura y el café se fusionan para ofrecer una experiencia única.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div id="imageModal-standfree" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+        <div class="mySlides">
+            <video src="~/videos/Cafe_Video.mp4" autoplay loop muted playsinline class="video-inicio" style="width:100%"></video>
+        </div>
+        <div class="mySlides">
+            <img src="~/images/index/index_imagen_libros.png" style="width:100%">
+        </div>
+        <div class="mySlides">
+            <img src="~/images/index/index_imagen_cafe.png" style="width:100%">
+        </div>
+    </div>
+    <div class="thumbnail-container">
+        <img src="~/images/index/index_imagen_inicio.png" onclick="currentSlide(1)" alt="Inicio">
+        <img src="~/images/index/index_imagen_libros.png" onclick="currentSlide(2)" alt="Libros">
+        <img src="~/images/index/index_imagen_cafe.png" onclick="currentSlide(3)" alt="Café">
+    </div>
+</div>
+
+<footer>
+    <p>© 2024 BibliotecaStand - Todos los derechos reservados</p>
+</footer>
+
+@section stylesheets_inferiores {
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const carritoTexto = document.querySelector(".carrito-texto");
+            const carritoIcono = document.querySelector(".carrito-icono");
+
+            function actualizarCarrito() {
+                const anchoVentana = window.innerWidth;
+
+                if (anchoVentana <= 550) {
+                    carritoTexto.style.display = "none"; // Ocultar texto en pantallas muy pequeñas
+                    carritoIcono.style.display = "flex"; // Mostrar ícono
+                } else if (anchoVentana > 550 && anchoVentana <= 992) {
+                    carritoTexto.style.display = "inline-block"; // Mostrar texto en pantallas medianas
+                    carritoIcono.style.display = "none"; // Ocultar ícono
+                } else {
+                    carritoTexto.style.display = "inline-block"; // Mostrar texto en pantallas grandes
+                    carritoIcono.style.display = "none"; // Ocultar ícono
+                }
+            }
+
+            // Ejecutar al cargar la página
+            actualizarCarrito();
+
+            // Ejecutar al redimensionar la ventana
+            window.addEventListener("resize", actualizarCarrito);
+        });
+    </script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/modal.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const floatingMessages = document.querySelectorAll(".floating-message");
+
+            floatingMessages.forEach((message) => {
+                // Animación de entrada (fade-in) al cargar el mensaje
+                setTimeout(() => {
+                    message.classList.add("fade-in");
+                }, 100); // Retraso mínimo para garantizar que la animación se vea
+
+                // Animación de salida (fade-out) después de 3 segundos
+                setTimeout(() => {
+                    message.classList.remove("fade-in");
+                    message.classList.add("fade-out"); // Aplicar clase de salida
+
+                    // Eliminar completamente el mensaje después de la animación de salida
+                    setTimeout(() => {
+                        message.remove();
+                    }, 500); // 500 ms coincide con la duración de la transición CSS
+                }, 3000); // Mostrar el mensaje durante 3 segundos antes de iniciar la salida
+            });
+        });
+    </script>
+}
