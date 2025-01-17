@@ -2,6 +2,7 @@
 using BibliotecaStandFree.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using BibliotecaStandFree.Utils;
 using System;
 
 namespace BibliotecaStandFree.Pages
@@ -18,11 +19,6 @@ namespace BibliotecaStandFree.Pages
         [BindProperty]
         public Contacto FormularioContacto { get; set; }
 
-        public void OnGet()
-        {
-            // Inicializa datos si es necesario
-        }
-
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
@@ -38,6 +34,16 @@ namespace BibliotecaStandFree.Pages
 
             TempData["ResponseMessage"] = "¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.";
             return RedirectToPage("/Contacto");
+        }
+        public int TotalItems { get; set; }
+
+        public void OnGet()
+        {
+            // Calcular el total de ítems y el precio total del carrito
+            TotalItems = CarritoHelper.ObtenerTotalItems(HttpContext.Session);
+
+            // Pasar datos al ViewData
+            ViewData["CartCount"] = TotalItems;
         }
     }
 }

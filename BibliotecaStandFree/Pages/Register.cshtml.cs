@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using BibliotecaStandFree.Models;
 using System.ComponentModel.DataAnnotations;
+using BibliotecaStandFree.Utils;
 
 namespace BibliotecaStandFree.Pages
 {
@@ -19,8 +20,8 @@ namespace BibliotecaStandFree.Pages
         }
 
         // Propiedad pública para pasar datos a la vista
-        [BindProperty]
-        public InputModel Input { get; set; } = new();
+        [BindProperty] public InputModel Input { get; set; } = new();
+        public int TotalItems { get; set; }
 
         // Clase para manejar los datos del formulario
         public class InputModel
@@ -36,8 +37,15 @@ namespace BibliotecaStandFree.Pages
             [Required(ErrorMessage = "La fecha de nacimiento es obligatoria.")]
             [Display(Name = "Fecha de Nacimiento")]
             [DataType(DataType.Date)]
-            public DateTime? UsuFechaNacimiento { get; set; }
+            private DateTime? _usuFechaNacimiento;
 
+            public DateTime? UsuFechaNacimiento
+            {
+                get => _usuFechaNacimiento;
+                set => _usuFechaNacimiento = value.HasValue
+                    ? DateTime.SpecifyKind(value.Value, DateTimeKind.Utc)
+                    : value;
+            }
             [Required(ErrorMessage = "El género es obligatorio.")]
             [Display(Name = "Género")]
             public string UsuGenero { get; set; } = string.Empty;
@@ -73,7 +81,11 @@ namespace BibliotecaStandFree.Pages
 
         public void OnGet()
         {
-            // Método ejecutado al cargar la página por primera vez
+            // Calcular el total de ítems y el precio total del carrito
+            TotalItems = CarritoHelper.ObtenerTotalItems(HttpContext.Session);
+
+            // Pasar datos al ViewData
+            ViewData["CartCount"] = TotalItems;
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -116,8 +128,5 @@ namespace BibliotecaStandFree.Pages
 
             return Page();
         }
-
-        
-        
     }
 }

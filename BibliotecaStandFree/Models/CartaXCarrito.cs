@@ -1,35 +1,42 @@
-﻿using Microsoft.EntityFrameworkCore;
-namespace BibliotecaStandFree.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-public class CartaXCarrito
+namespace BibliotecaStandFree.Models
 {
-    [Key]
-    [Column("carxcarId")]
-    public int CarxcarId { get; set; } // Clave primaria autogenerada
-
-    [ForeignKey("Carrito")]
-    [Column("carCodigo")]
-    public string CarCodigo { get; set; } // Clave foránea de Carrito
-    public Carrito Carrito { get; set; } // Relación con Carrito
-
-    [ForeignKey("Carta")]
-    [Column("cartaCodigo")]
-    public string CartaCodigo { get; set; } // Clave foránea de Carta
-    public Carta Carta { get; set; } // Relación con Carta
-
-    [Column("carxcarCantidad")]
-    [Range(0, int.MaxValue)] // Valor mínimo de 0
-    public int CarxcarCantidad { get; set; } // Cantidad del producto en la carta
-
-    [Column("carxcarTotal")]
-    [Range(0, 9999999.99)] // Rango válido para valores decimales
-    [Precision(9, 2)] // Precisión del campo decimal (max_digits=9, decimal_places=2)
-    public decimal CarxcarTotal { get; set; } // Total por este producto
-
-    public override string ToString()
+    public class CartaXCarrito
     {
-        return $"{Carta?.CarNombre} x {CarxcarCantidad}"; // Representación como cadena
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Clave primaria autogenerada
+        [Column("carxcarCodigo")]
+        public int CarxcarCodigo { get; set; } // Clave primaria autogenerada
+
+        [ForeignKey("Carrito")]
+        [Required]
+        [Column("carCodigo")]
+        public string CarCodigo { get; set; }
+        public Carrito Carrito { get; set; }
+
+        [ForeignKey("Carta")]
+        [Required]
+        [Column("cartaCodigo")]
+        public string CartaCodigo { get; set; } // Clave foránea de Carta
+        public Carta Carta { get; set; } // Relación con Carta
+
+        [Required]
+        [Range(1, int.MaxValue, ErrorMessage = "La cantidad debe ser al menos 1.")]
+        [Column("carxcarCantidad")]
+        public int CarxcarCantidad { get; set; }
+        
+        [Required]
+        [Range(0.01, 9999999.99, ErrorMessage = "El total debe ser mayor a 0.")]
+        [Precision(9, 2)] // Precisión del campo decimal (max_digits=9, decimal_places=2)
+        [Column("carxcarTotal")]
+        public decimal CarxcarTotal { get; set; } // Total por este producto
+
+        public override string ToString()
+        {
+            return $"{Carta?.CarNombre ?? "Desconocido"} x {CarxcarCantidad}";
+        }
     }
 }

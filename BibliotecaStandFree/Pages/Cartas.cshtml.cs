@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using BibliotecaStandFree.Data;
 using BibliotecaStandFree.Models;
+using BibliotecaStandFree.Utils;
 
 namespace BibliotecaStandFree.Pages
 {
@@ -19,9 +20,14 @@ namespace BibliotecaStandFree.Pages
         public List<Carta> Cartas { get; set; } = new();
         public string? SearchQuery { get; set; }
         public string? SearchType { get; set; }
+        public int TotalItems { get; set; }
 
         public async Task OnGetAsync(string? search, string? type)
         {
+            // Calcular el total de ítems en el carrito
+            TotalItems = CarritoHelper.ObtenerTotalItems(HttpContext.Session);
+            ViewData["CartCount"] = TotalItems;
+
             // Obtener las cartas activas desde la base de datos
             var query = _context.Cartas.Where(c => c.CarStatus == "ACT").AsQueryable();
 
@@ -33,9 +39,9 @@ namespace BibliotecaStandFree.Pages
 
                 query = SearchType switch
                 {
-                    "nombre" => query.Where(c => c.CarNombre.Contains(search, StringComparison.OrdinalIgnoreCase)),
+                    "nombre" => query.Where(c => EF.Functions.Like(c.CarNombre, $"%{search}%")),
                     "precio" when decimal.TryParse(search, out var price) => query.Where(c => c.CarPrecio == price),
-                    _ => query // Si el filtro es inválido, no aplicamos ningún cambio.
+                    _ => query // Si el filtro es inválido, no aplicamos ningún cambio
                 };
             }
 

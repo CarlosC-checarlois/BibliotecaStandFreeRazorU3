@@ -20,8 +20,8 @@ namespace BibliotecaStandFree.Data
             // Obtener la cadena de conexión desde el archivo de configuración
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-            // Configurar el DbContext para usar MySQL
-            optionsBuilder.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 32)));
+            // Configurar el DbContext para usar PostgreSQL
+            optionsBuilder.UseNpgsql(connectionString);
 
             return new ApplicationDbContext(optionsBuilder.Options);
         }

@@ -18,6 +18,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Carlos\Desktop\Variados\Portafolio\BibliotecaStandFreeRazor\BibliotecaStandFree\BibliotecaStandFree
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Admin/Panel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUGFuZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Agregar/AgregarCartas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWdyZWdhclxBZ3JlZ2FyQ2FydGFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Agregar/AgregarLibros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWdyZWdhclxBZ3JlZ2FyTGlicm9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Carrito.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2Fycml0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,8 +50,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV0YWxsZUxpYnJvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Editar/EditarCartas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdGFyXEVkaXRhckNhcnRhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Editar/EditarLibros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdGFyXEVkaXRhckxpYnJvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Gestionar/GestionarCartas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VzdGlvbmFyXEdlc3Rpb25hckNhcnRhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Gestionar/GestionarLibros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VzdGlvbmFyXEdlc3Rpb25hckxpYnJvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Gestionar/GestionarOrdenes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VzdGlvbmFyXEdlc3Rpb25hck9yZGVuZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Index.cshtml]
@@ -68,6 +100,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Usuario/Panel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb1xQYW5lbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Visualizar/VisualizarOrden.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlzdWFsaXphclxWaXN1YWxpemFyT3JkZW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/_ViewImports.cshtml]

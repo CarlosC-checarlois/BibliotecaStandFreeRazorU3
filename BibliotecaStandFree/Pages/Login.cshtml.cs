@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
+using BibliotecaStandFree.Utils;
 
 namespace BibliotecaStandFree.Pages
 {
@@ -34,9 +35,15 @@ namespace BibliotecaStandFree.Pages
             public string Password { get; set; } = string.Empty;
         }
 
+        public int TotalItems { get; set; }
+
         public void OnGet()
         {
-            // Método ejecutado al cargar la página por primera vez
+            // Calcular el total de ítems y el precio total del carrito
+            TotalItems = CarritoHelper.ObtenerTotalItems(HttpContext.Session);
+
+            // Pasar datos al ViewData
+            ViewData["CartCount"] = TotalItems;
         }
 
         public async Task<IActionResult> OnPostAsync()

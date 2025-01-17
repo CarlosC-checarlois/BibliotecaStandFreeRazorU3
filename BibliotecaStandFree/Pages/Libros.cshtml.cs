@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using BibliotecaStandFree.Data;
 using BibliotecaStandFree.Models;
+using BibliotecaStandFree.Utils;
 
 namespace BibliotecaStandFree.Pages
 {
@@ -19,9 +20,14 @@ namespace BibliotecaStandFree.Pages
         public List<Libro> Libros { get; set; } = new();
         public string? SearchQuery { get; set; }
         public string? SearchType { get; set; }
+        public int TotalItems { get; set; }
 
         public async Task OnGetAsync(string? search, string? type)
         {
+            // Obtener el carrito y calcular el total de ítems
+            TotalItems = CarritoHelper.ObtenerTotalItems(HttpContext.Session);
+            ViewData["CartCount"] = TotalItems;
+
             // Obtener los libros activos desde la base de datos
             var query = _context.Libros.Where(l => l.LibStatus == "ACT").AsQueryable();
 
@@ -33,7 +39,7 @@ namespace BibliotecaStandFree.Pages
 
                 query = SearchType switch
                 {
-                    "nombre" => query.Where(l => l.LibNombre.Contains(search, StringComparison.OrdinalIgnoreCase)),
+                    "nombre" => query.Where(l => EF.Functions.Like(l.LibNombre, $"%{search}%")),
                     "precio" when decimal.TryParse(search, out var price) => query.Where(l => l.LibPrecio == price),
                     "categoria" => _context.LibrosXLibreriaCategorias
                         .Where(lxc => lxc.CategoriaId.ToString() == search)

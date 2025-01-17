@@ -7,15 +7,16 @@ using BibliotecaStandFree.Utils;
 var builder = WebApplication.CreateBuilder(args);
 
 // Configuración de la conexión a MySQL
-var connectionString = "server=localhost; port=3306; database=bibliotecastandfree; user=root; password=MySQLsa1Q%#12; Persist Security Info=False; Connect Timeout=300";
-var serverVersion = new MySqlServerVersion(new Version(8, 0, 27));
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseMySql(connectionString, serverVersion)
+    options.UseNpgsql(connectionString) // Cambiar a PostgreSQL
         .LogTo(Console.WriteLine, LogLevel.Information)
         .EnableSensitiveDataLogging()
         .EnableDetailedErrors()
 );
+
 
 builder.Services.AddIdentity<Usuario, IdentityRole>(options =>
     {
@@ -55,11 +56,34 @@ using (var scope = app.Services.CreateScope())
     await RoleHelper.AsignarRol(userManager, roleManager, "carlosconstantev@gmail.com", "Admin");
 }
 
+// Ejecutar la inicialización de la base de datos y crear el usuario administrador
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    try
+    {
+        // Migrar la base de datos
+        var context = services.GetRequiredService<ApplicationDbContext>();
+        context.Database.Migrate();
+
+        // Crear el usuario administrador
+        await AdminInitializer.CreateAdminAsync(services);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error al inicializar la base de datos: {ex.Message}");
+    }
+}
+
+
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
+
 app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();

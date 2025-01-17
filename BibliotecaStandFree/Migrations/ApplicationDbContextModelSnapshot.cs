@@ -3,8 +3,8 @@ using System;
 using BibliotecaStandFree.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -18,36 +18,40 @@ namespace BibliotecaStandFree.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "8.0.2")
-                .HasAnnotation("Relational:MaxIdentifierLength", 64);
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("BibliotecaStandFree.Models.Carrito", b =>
                 {
                     b.Property<string>("CarCodigo")
                         .HasMaxLength(7)
-                        .HasColumnType("varchar(7)")
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("carCodigo");
+
+                    b.Property<DateTime>("CarFechaCreacion")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("carFechaCreacion");
 
                     b.Property<decimal>("CarIva")
                         .HasPrecision(9, 2)
-                        .HasColumnType("decimal(9,2)")
+                        .HasColumnType("numeric(9,2)")
                         .HasColumnName("carIva");
 
                     b.Property<string>("CarStatus")
                         .IsRequired()
                         .HasMaxLength(3)
-                        .HasColumnType("varchar(3)")
+                        .HasColumnType("character varying(3)")
                         .HasColumnName("carStatus");
 
                     b.Property<decimal>("CarSubtotal")
                         .HasPrecision(9, 2)
-                        .HasColumnType("decimal(9,2)")
+                        .HasColumnType("numeric(9,2)")
                         .HasColumnName("carSubtotal");
 
                     b.Property<decimal>("CarTotal")
                         .HasPrecision(9, 2)
-                        .HasColumnType("decimal(9,2)")
+                        .HasColumnType("numeric(9,2)")
                         .HasColumnName("carTotal");
 
                     b.HasKey("CarCodigo");
@@ -59,38 +63,38 @@ namespace BibliotecaStandFree.Migrations
                 {
                     b.Property<string>("CarCodigo")
                         .HasMaxLength(7)
-                        .HasColumnType("varchar(7)")
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("carCodigo");
 
                     b.Property<int>("CarCantidad")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("carCantidad");
 
                     b.Property<string>("CarDescripcion")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("carDescripcion");
 
                     b.Property<string>("CarFoto")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("carFoto");
 
                     b.Property<string>("CarNombre")
                         .IsRequired()
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150)")
+                        .HasColumnType("character varying(150)")
                         .HasColumnName("carNombre");
 
                     b.Property<decimal>("CarPrecio")
                         .HasPrecision(9, 2)
-                        .HasColumnType("decimal(9,2)")
+                        .HasColumnType("numeric(9,2)")
                         .HasColumnName("carPrecio");
 
                     b.Property<string>("CarStatus")
                         .IsRequired()
                         .HasMaxLength(3)
-                        .HasColumnType("varchar(3)")
+                        .HasColumnType("character varying(3)")
                         .HasColumnName("carStatus");
 
                     b.HasKey("CarCodigo");
@@ -102,19 +106,19 @@ namespace BibliotecaStandFree.Migrations
                 {
                     b.Property<string>("CarxcatCodigo")
                         .HasMaxLength(7)
-                        .HasColumnType("varchar(7)")
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("carxcatCodigo");
 
                     b.Property<string>("CarxcatNombre")
                         .IsRequired()
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150)")
+                        .HasColumnType("character varying(150)")
                         .HasColumnName("carxcatNombre");
 
                     b.Property<string>("CarxcatStatus")
                         .IsRequired()
                         .HasMaxLength(3)
-                        .HasColumnType("varchar(3)")
+                        .HasColumnType("character varying(3)")
                         .HasColumnName("carxcatStatus");
 
                     b.HasKey("CarxcatCodigo");
@@ -124,28 +128,40 @@ namespace BibliotecaStandFree.Migrations
 
             modelBuilder.Entity("BibliotecaStandFree.Models.CartaXCarrito", b =>
                 {
+                    b.Property<int>("CarxcarCodigo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("carxcarCodigo");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("CarxcarCodigo"));
+
                     b.Property<string>("CarCodigo")
-                        .HasColumnType("varchar(7)")
+                        .IsRequired()
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("carCodigo");
 
+                    b.Property<string>("CarritoCarCodigo")
+                        .HasColumnType("character varying(7)");
+
                     b.Property<string>("CartaCodigo")
-                        .HasColumnType("varchar(7)")
+                        .IsRequired()
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("cartaCodigo");
 
                     b.Property<int>("CarxcarCantidad")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("carxcarCantidad");
-
-                    b.Property<int>("CarxcarId")
-                        .HasColumnType("int")
-                        .HasColumnName("carxcarId");
 
                     b.Property<decimal>("CarxcarTotal")
                         .HasPrecision(9, 2)
-                        .HasColumnType("decimal(9,2)")
+                        .HasColumnType("numeric(9,2)")
                         .HasColumnName("carxcarTotal");
 
-                    b.HasKey("CarCodigo", "CartaCodigo");
+                    b.HasKey("CarxcarCodigo");
+
+                    b.HasIndex("CarCodigo");
+
+                    b.HasIndex("CarritoCarCodigo");
 
                     b.HasIndex("CartaCodigo");
 
@@ -156,29 +172,29 @@ namespace BibliotecaStandFree.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("id");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("email");
 
                     b.Property<DateTime>("FechaEnvio")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("fecha_envio");
 
                     b.Property<string>("Mensaje")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("mensaje");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150)")
+                        .HasColumnType("character varying(150)")
                         .HasColumnName("nombre");
 
                     b.HasKey("Id");
@@ -190,57 +206,52 @@ namespace BibliotecaStandFree.Migrations
                 {
                     b.Property<string>("LibCodigo")
                         .HasMaxLength(7)
-                        .HasColumnType("varchar(7)")
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("libCodigo");
 
                     b.Property<string>("LibAutor")
                         .IsRequired()
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150)")
+                        .HasColumnType("character varying(150)")
                         .HasColumnName("libAutor");
 
                     b.Property<int>("LibCantidad")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("libCantidad");
 
                     b.Property<DateTime>("LibFechaPublicacion")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("libFechaPublicacion");
 
                     b.Property<string>("LibFoto")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("libFoto");
 
                     b.Property<string>("LibNombre")
                         .IsRequired()
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150)")
+                        .HasColumnType("character varying(150)")
                         .HasColumnName("libNombre");
 
-                    b.Property<decimal?>("LibPrecio")
+                    b.Property<decimal>("LibPrecio")
                         .HasPrecision(9, 2)
-                        .HasColumnType("decimal(9,2)")
+                        .HasColumnType("numeric(9,2)")
                         .HasColumnName("libPrecio");
 
                     b.Property<string>("LibSinopsis")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("libSinopsis");
 
                     b.Property<string>("LibStatus")
                         .IsRequired()
                         .HasMaxLength(3)
-                        .HasColumnType("varchar(3)")
+                        .HasColumnType("character varying(3)")
                         .HasColumnName("libStatus");
 
-                    b.Property<string>("LibURLLibro")
-                        .IsRequired()
-                        .HasColumnType("longtext")
-                        .HasColumnName("libURLLibro");
-
                     b.Property<int>("LibVolumen")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("libVolumen");
 
                     b.HasKey("LibCodigo");
@@ -252,13 +263,13 @@ namespace BibliotecaStandFree.Migrations
                 {
                     b.Property<string>("LibxcatCodigo")
                         .HasMaxLength(7)
-                        .HasColumnType("varchar(7)")
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("libxcatCodigo");
 
                     b.Property<string>("LibxcatNombre")
                         .IsRequired()
                         .HasMaxLength(150)
-                        .HasColumnType("varchar(150)")
+                        .HasColumnType("character varying(150)")
                         .HasColumnName("libxcatNombre");
 
                     b.HasKey("LibxcatCodigo");
@@ -268,28 +279,40 @@ namespace BibliotecaStandFree.Migrations
 
             modelBuilder.Entity("BibliotecaStandFree.Models.LibrosXCarrito", b =>
                 {
+                    b.Property<int>("LibxcarCodigo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("libxcarCodigo");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("LibxcarCodigo"));
+
                     b.Property<string>("CarCodigo")
-                        .HasColumnType("varchar(7)")
+                        .IsRequired()
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("carCodigo");
 
+                    b.Property<string>("CarritoCarCodigo")
+                        .HasColumnType("character varying(7)");
+
                     b.Property<string>("LibCodigo")
-                        .HasColumnType("varchar(7)")
+                        .IsRequired()
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("libCodigo");
 
                     b.Property<int>("LibxcarCantidad")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("libxcarCantidad");
-
-                    b.Property<int>("LibxcarId")
-                        .HasColumnType("int")
-                        .HasColumnName("libxcarId");
 
                     b.Property<decimal>("LibxcarTotal")
                         .HasPrecision(9, 2)
-                        .HasColumnType("decimal(9,2)")
+                        .HasColumnType("numeric(9,2)")
                         .HasColumnName("libxcarTotal");
 
-                    b.HasKey("CarCodigo", "LibCodigo");
+                    b.HasKey("LibxcarCodigo");
+
+                    b.HasIndex("CarCodigo");
+
+                    b.HasIndex("CarritoCarCodigo");
 
                     b.HasIndex("LibCodigo");
 
@@ -299,15 +322,15 @@ namespace BibliotecaStandFree.Migrations
             modelBuilder.Entity("BibliotecaStandFree.Models.LibrosXLibreriaCategoria", b =>
                 {
                     b.Property<string>("LibroId")
-                        .HasColumnType("varchar(7)")
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("libroId");
 
                     b.Property<string>("CategoriaId")
-                        .HasColumnType("varchar(7)")
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("categoriaId");
 
                     b.Property<int>("LibxlibcatId")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("libxlibcatId");
 
                     b.HasKey("LibroId", "CategoriaId");
@@ -320,15 +343,15 @@ namespace BibliotecaStandFree.Migrations
             modelBuilder.Entity("BibliotecaStandFree.Models.RelCartaCategoria", b =>
                 {
                     b.Property<string>("CartaId")
-                        .HasColumnType("varchar(7)")
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("cartaId");
 
                     b.Property<string>("CategoriaId")
-                        .HasColumnType("varchar(7)")
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("categoriaId");
 
                     b.Property<int>("RelCartaCategoriaId")
-                        .HasColumnType("int")
+                        .HasColumnType("integer")
                         .HasColumnName("relCartaCategoriaId");
 
                     b.HasKey("CartaId", "CategoriaId");
@@ -341,99 +364,99 @@ namespace BibliotecaStandFree.Migrations
             modelBuilder.Entity("BibliotecaStandFree.Models.Usuario", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("text");
 
                     b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("DateJoined")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("dateJoined");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("character varying(256)");
 
                     b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<DateTime?>("LastLogin")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("lastLogin");
 
                     b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("character varying(256)");
 
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("character varying(256)");
 
                     b.Property<string>("PasswordHash")
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<string>("PhoneNumber")
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("SecurityStamp")
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("character varying(256)");
 
                     b.Property<string>("UsuApellido")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("usuApellido");
 
                     b.Property<string>("UsuApodo")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("usuApodo");
 
                     b.Property<DateTime?>("UsuFechaNacimiento")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("usuFechaNacimiento");
 
                     b.Property<string>("UsuGenero")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("usuGenero");
 
                     b.Property<string>("UsuNombre")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("usuNombre");
 
                     b.Property<bool>("UsuPreferenciaAnuncios")
-                        .HasColumnType("tinyint(1)")
+                        .HasColumnType("boolean")
                         .HasColumnName("usuPreferenciaAnuncios");
 
                     b.Property<string>("UsuStatus")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("usuStatus");
 
                     b.Property<string>("UsuTelefono")
                         .IsRequired()
-                        .HasColumnType("longtext")
+                        .HasColumnType("text")
                         .HasColumnName("usuTelefono");
 
                     b.HasKey("Id");
@@ -451,26 +474,31 @@ namespace BibliotecaStandFree.Migrations
             modelBuilder.Entity("BibliotecaStandFree.Models.UsuarioXCarrito", b =>
                 {
                     b.Property<string>("UsuarioId")
-                        .HasColumnType("varchar(255)")
+                        .HasColumnType("text")
                         .HasColumnName("usuarioId");
 
                     b.Property<string>("CarritoId")
-                        .HasColumnType("varchar(7)")
+                        .HasColumnType("character varying(7)")
                         .HasColumnName("carritoId");
 
+                    b.Property<string>("UsuarioId1")
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("UsuxcarFechaModificacion")
-                        .HasColumnType("datetime(6)")
+                        .HasColumnType("timestamp with time zone")
                         .HasColumnName("usuxcarFechaModificacion");
 
                     b.Property<string>("UsuxcarStatus")
                         .IsRequired()
                         .HasMaxLength(3)
-                        .HasColumnType("varchar(3)")
+                        .HasColumnType("character varying(3)")
                         .HasColumnName("usuxcarStatus");
 
                     b.HasKey("UsuarioId", "CarritoId");
 
                     b.HasIndex("CarritoId");
+
+                    b.HasIndex("UsuarioId1");
 
                     b.ToTable("UsuarioXCarritos");
                 });
@@ -478,19 +506,19 @@ namespace BibliotecaStandFree.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("text");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("character varying(256)");
 
                     b.Property<string>("NormalizedName")
                         .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("character varying(256)");
 
                     b.HasKey("Id");
 
@@ -505,19 +533,19 @@ namespace BibliotecaStandFree.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ClaimType")
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<string>("ClaimValue")
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<string>("RoleId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -530,19 +558,19 @@ namespace BibliotecaStandFree.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ClaimType")
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<string>("ClaimValue")
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -554,17 +582,17 @@ namespace BibliotecaStandFree.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("text");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("text");
 
                     b.Property<string>("ProviderDisplayName")
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("text");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -576,10 +604,10 @@ namespace BibliotecaStandFree.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("text");
 
                     b.Property<string>("RoleId")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("text");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -591,16 +619,16 @@ namespace BibliotecaStandFree.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("text");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("text");
 
                     b.Property<string>("Value")
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
@@ -610,10 +638,14 @@ namespace BibliotecaStandFree.Migrations
             modelBuilder.Entity("BibliotecaStandFree.Models.CartaXCarrito", b =>
                 {
                     b.HasOne("BibliotecaStandFree.Models.Carrito", "Carrito")
-                        .WithMany("CartaXCarritos")
+                        .WithMany()
                         .HasForeignKey("CarCodigo")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("BibliotecaStandFree.Models.Carrito", null)
+                        .WithMany("CartaXCarritos")
+                        .HasForeignKey("CarritoCarCodigo");
 
                     b.HasOne("BibliotecaStandFree.Models.Carta", "Carta")
                         .WithMany()
@@ -629,10 +661,14 @@ namespace BibliotecaStandFree.Migrations
             modelBuilder.Entity("BibliotecaStandFree.Models.LibrosXCarrito", b =>
                 {
                     b.HasOne("BibliotecaStandFree.Models.Carrito", "Carrito")
-                        .WithMany("LibrosXCarritos")
+                        .WithMany()
                         .HasForeignKey("CarCodigo")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("BibliotecaStandFree.Models.Carrito", null)
+                        .WithMany("LibrosXCarritos")
+                        .HasForeignKey("CarritoCarCodigo");
 
                     b.HasOne("BibliotecaStandFree.Models.Libro", "Libro")
                         .WithMany()
@@ -692,10 +728,14 @@ namespace BibliotecaStandFree.Migrations
                         .IsRequired();
 
                     b.HasOne("BibliotecaStandFree.Models.Usuario", "Usuario")
-                        .WithMany("UsuarioXCarritos")
+                        .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("BibliotecaStandFree.Models.Usuario", null)
+                        .WithMany("UsuarioXCarritos")
+                        .HasForeignKey("UsuarioId1");
 
                     b.Navigation("Carrito");
 

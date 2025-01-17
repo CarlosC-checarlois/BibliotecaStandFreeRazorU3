@@ -31,7 +31,15 @@
         <ul class="nav-list d-flex list-unstyled mb-0">
             @if (SignInManager.IsSignedIn(User))
             {
-                if (!User.IsInRole("Admin"))
+                var userId = UserManager.GetUserId(User); // Obtén el ID del usuario actual
+
+                if (!string.IsNullOrEmpty(userId) && await UserManager.IsInRoleAsync(await UserManager.FindByIdAsync(userId), "Admin"))
+                {
+                    <li class="px-2">
+                        <a class="nav-link" asp-page="/Admin/Panel">Panel Administrador</a>
+                    </li>
+                }
+                else
                 {
                     <li class="px-2">
                         <a class="nav-link" asp-page="/Index">Inicio</a>
@@ -51,12 +59,6 @@
                     </li>
                     <li class="px-2">
                         <a class="nav-link" asp-page="/Usuario/Panel">Panel</a>
-                    </li>
-                }
-                else
-                {
-                    <li class="px-2">
-                        <a class="nav-link" asp-page="/AdminPanel">Panel Administrador</a>
                     </li>
                 }
 
@@ -89,9 +91,14 @@
                     <a class="nav-link" asp-page="/Login">Login</a>
                 </li>
             }
+
         </ul>
     </nav>
 </header>
+<!-- Botón flotante de WhatsApp -->
+<a href="https://api.whatsapp.com/send?phone=+51987654321" class="btn-wsp" target="_blank">
+    <img src="~/images/generales/icono_whatssap.png" alt="WhatsApp"/>
+</a>
 
 @RenderBody()
 

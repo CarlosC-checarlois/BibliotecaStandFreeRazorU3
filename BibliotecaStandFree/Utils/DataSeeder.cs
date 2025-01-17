@@ -79,7 +79,6 @@ namespace BibliotecaStandFree.Utils
                     LibFechaPublicacion = faker.Date.Past(50),
                     LibVolumen = faker.Random.Int(1, 5),
                     LibSinopsis = faker.Lorem.Paragraph(),
-                    LibURLLibro = faker.Internet.Url(),
                     LibFoto = faker.Image.PicsumUrl(),
                     LibStatus = "ACT",
                     LibPrecio = Math.Round(faker.Random.Decimal(5, 100), 2)

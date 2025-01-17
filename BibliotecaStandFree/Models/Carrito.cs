@@ -26,6 +26,9 @@ namespace BibliotecaStandFree.Models
         [Range(0, 9999999.99)]
         [Precision(9, 2)]
         public decimal CarTotal { get; set; }
+        
+        [Column("carFechaCreacion")]
+        public DateTime CarFechaCreacion { get; set; } = DateTime.UtcNow;
 
         [Column("carStatus")]
         [StringLength(3)] // Longitud máxima de 3 caracteres

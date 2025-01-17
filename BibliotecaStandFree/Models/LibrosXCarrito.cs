@@ -7,31 +7,36 @@ namespace BibliotecaStandFree.Models
     public class LibrosXCarrito
     {
         [Key]
-        [Column("libxcarId")]
-        public int LibxcarId { get; set; } // Clave primaria autogenerada
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Configurar clave primaria autogenerada
+        [Column("libxcarCodigo")]
+        public int LibxcarCodigo { get; set; } // Clave primaria autogenerada
 
         [ForeignKey("Carrito")]
+        [Required]
         [Column("carCodigo")]
-        public string CarCodigo { get; set; } // Clave foránea de Carrito
-        public Carrito Carrito { get; set; } // Relación con Carrito
-
+        public string CarCodigo { get; set; }
+        public Carrito Carrito { get; set; }
+        
         [ForeignKey("Libro")]
+        [Required]
         [Column("libCodigo")]
         public string LibCodigo { get; set; } // Clave foránea de Libro
         public Libro Libro { get; set; } // Relación con Libro
 
+        [Required]
+        [Range(1, int.MaxValue, ErrorMessage = "La cantidad debe ser al menos 1.")]
         [Column("libxcarCantidad")]
-        [Range(1, int.MaxValue)] // Valor mínimo de 1
         public int LibxcarCantidad { get; set; } // Cantidad del libro en el carrito
 
+        [Required]
+        [Range(0.01, 9999999.99, ErrorMessage = "El total debe ser mayor a 0.")]
+        [Precision(9, 2)] // Precisión del campo decimal
         [Column("libxcarTotal")]
-        [Range(0, 9999999.99)] // Rango válido para valores decimales
-        [Precision(9, 2)] // Precisión del campo decimal (max_digits=9, decimal_places=2)
         public decimal LibxcarTotal { get; set; } // Total por este libro
 
         public override string ToString()
         {
-            return $"{Libro?.LibNombre} x {LibxcarCantidad}"; // Representación como cadena
+            return $"{Libro?.LibNombre ?? "Desconocido"} x {LibxcarCantidad}";
         }
     }
 }

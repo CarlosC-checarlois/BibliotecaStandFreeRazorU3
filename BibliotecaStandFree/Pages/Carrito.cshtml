@@ -245,6 +245,8 @@
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 }
 
+<br>
+<br>
 <main class="container py-4">
     <h1 class="text-center mb-4 vision_h1_span">Carrito de Compras</h1>
 
@@ -329,8 +331,8 @@
                 const precio = parseFloat(item.dataset.precio);
                 const cantidad = parseInt(item.dataset.cantidad);
 
-                // Calcular el subtotal con IVA del 15%
-                const subtotal = precio * cantidad * 1.15; // Aplicar IVA (15%)
+                // Calcular el subtotal (sin aplicar IVA aquí)
+                const subtotal = precio * cantidad;
                 totalCarrito += subtotal;
 
                 // Actualizar el subtotal en el HTML
@@ -344,8 +346,9 @@
             if (totalCarritoElement) {
                 totalCarritoElement.textContent = totalCarrito.toFixed(2);
             }
-
         });
+
+
         document.addEventListener("DOMContentLoaded", () => {
             const carritoTexto = document.querySelector(".carrito-texto");
             const carritoIcono = document.querySelector(".carrito-icono");

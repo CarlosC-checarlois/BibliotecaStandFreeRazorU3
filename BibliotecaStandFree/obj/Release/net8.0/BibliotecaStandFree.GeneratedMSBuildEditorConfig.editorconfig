@@ -1,0 +1,119 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = BibliotecaStandFree
+build_property.RootNamespace = BibliotecaStandFree
+build_property.ProjectDir = C:\Users\Carlos\Desktop\Variados\Portafolio\BibliotecaStandFreeRazor\BibliotecaStandFree\BibliotecaStandFree\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Carlos\Desktop\Variados\Portafolio\BibliotecaStandFreeRazor\BibliotecaStandFree\BibliotecaStandFree
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Admin/Panel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUGFuZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Agregar/AgregarCartas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWdyZWdhclxBZ3JlZ2FyQ2FydGFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Agregar/AgregarLibros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWdyZWdhclxBZ3JlZ2FyTGlicm9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Carrito.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2Fycml0by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Cartas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydGFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Contacto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFjdG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/DetalleCartas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV0YWxsZUNhcnRhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/DetalleLibros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV0YWxsZUxpYnJvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Editar/EditarCartas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdGFyXEVkaXRhckNhcnRhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Editar/EditarLibros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdGFyXEVkaXRhckxpYnJvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Gestionar/GestionarCartas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VzdGlvbmFyXEdlc3Rpb25hckNhcnRhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Gestionar/GestionarLibros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VzdGlvbmFyXEdlc3Rpb25hckxpYnJvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Gestionar/GestionarOrdenes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VzdGlvbmFyXEdlc3Rpb25hck9yZGVuZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Libros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGlicm9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Usuario/Panel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXN1YXJpb1xQYW5lbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Visualizar/VisualizarOrden.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmlzdWFsaXphclxWaXN1YWxpemFyT3JkZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Carlos/Desktop/Variados/Portafolio/BibliotecaStandFreeRazor/BibliotecaStandFree/BibliotecaStandFree/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-hoq3d90kz5

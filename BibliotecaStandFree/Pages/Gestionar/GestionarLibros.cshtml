@@ -1,0 +1,325 @@
+﻿@page
+@model BibliotecaStandFree.Pages.Gestionar.GestionarLibrosModel
+@{
+ViewData["Title"] = "Gestionar Libros";
+}
+
+@section stylesheets_superiores {
+<link rel="stylesheet" href="~/css/styles.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<style>
+    .btn-wsp {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 25px;
+        right: 25px;
+        background: #fff;
+        color: #FFF;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 35px;
+        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        transition: all 300ms ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-wsp:hover {
+        background: #d0ffd9;
+    }
+
+    .btn-wsp img {
+        width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+        height: 100%; /* Hace que la imagen ocupe toda la altura del contenedor */
+        object-fit: cover; /* Ajusta la imagen para llenar completamente el contenedor sin distorsionar */
+        border-radius: 50%; /* Mantiene el borde redondeado de la imagen */
+    }
+
+    @@media only screen and (min-width: 320px) and (max-width: 768px) {
+    .btn-wsp {
+        width: 63px;
+        height: 63px;
+    }
+
+    .btn-wsp img {
+        width: 100%; /* Ajusta el tamaño para que llene el nuevo tamaño del botón */
+        height: 100%; /* Ajusta el tamaño para que llene el nuevo tamaño del botón */
+    }
+    }
+
+</style>
+<link rel="stylesheet" href="~/css/styles_administrador_tablas.css"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+    /* Contenedor del carrito */
+    .carrito-container {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Texto del carrito (visible en pantallas pequeñas y medianas) */
+    .carrito-texto {
+        display: none; /* Oculto por defecto */
+        font-size: 16px;
+        text-decoration: none;
+        color: #333;
+    }
+
+    /* Ícono del carrito (visible por defecto en pantallas grandes) */
+    .carrito-icono {
+        display: none; /* Oculto por defecto */
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+        font-size: 20px;
+        position: relative;
+    }
+
+    /* Media query para pantallas pequeñas y medianas (≤ 992px) */
+    @@media (max-width: 992px) {
+    .carrito-texto {
+        display: inline-block; /* Mostrar texto */
+    }
+
+    .carrito-icono {
+        display: none; /* Ocultar ícono */
+    }
+    }
+
+    /* Media query para pantallas grandes (> 992px) */
+    @@media (min-width: 993px) {
+    .carrito-texto {
+        display: inline-block;
+    }
+
+    .carrito-icono {
+        display: none; /* Ocultar ícono */
+    }
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f9f9f9;
+    }
+
+    .bg-secondary {
+        background-color: #6c757d !important;
+    }
+
+    .bg-warning {
+        background-color: #ffe8b6 !important;
+    }
+
+    .text-dark {
+        color: #343a40 !important;
+    }
+</style>
+<style>
+    /* Contenedor de mensajes flotantes */
+    .floating-messages-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        max-width: 320px;
+        font-family: 'Georgia', serif; /* Fuente más amigable */
+    }
+
+    /* Estilo base para los mensajes */
+    .floating-message {
+        margin-bottom: 10px;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(to bottom, #fff9f0, #fff3e6); /* Fondo cálido */
+        opacity: 0; /* Por defecto invisible */
+        transform: translateY(-20px); /* Posición inicial para animación */
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        border: 1px solid #d6ccc2; /* Borde suave */
+    }
+
+
+    /* Animación de entrada (fade-in) */
+    .floating-message.fade-in {
+        opacity: 1;
+        transform: translateY(0); /* Volver a la posición original */
+    }
+
+    /* Animación de salida (fade-out) */
+    .floating-message.fade-out {
+        opacity: 0;
+        transform: translateY(-20px); /* Desplazar hacia arriba al salir */
+    }
+
+    .floating-message-success {
+        background: linear-gradient(to bottom, #fbeec1, #f5d19a); /* Gradiente cálido estilo cafetería */
+        color: #5c3d2e; /* Texto en marrón oscuro */
+        border: 1px solid #e5b887; /* Borde marrón suave */
+        box-shadow: 0px 4px 6px rgba(92, 61, 46, 0.3); /* Sombra para dar profundidad */
+    }
+
+    /* Efecto hover para el mensaje de éxito */
+    .floating-message-success:hover {
+        background: linear-gradient(to bottom, #f5d19a, #fbeec1); /* Invertir el gradiente al pasar */
+        box-shadow: 0px 6px 10px rgba(92, 61, 46, 0.5); /* Aumentar la sombra al pasar */
+    }
+
+    .floating-message-error {
+        background: linear-gradient(to bottom, #fce4e4, #f8b8b8); /* Gradiente de tonos rosados suaves */
+        color: #8b1e24; /* Texto en un rojo marrón oscuro */
+        border: 1px solid #e78d8d; /* Borde rojo suave */
+        box-shadow: 0px 4px 6px rgba(139, 30, 36, 0.3); /* Sombra para dar profundidad */
+        font-family: 'Arial', sans-serif; /* Fuente profesional */
+        padding: 15px;
+        border-radius: 8px; /* Bordes más redondeados */
+        animation: shake 0.3s ease-in-out; /* Animación de sacudida suave */
+    }
+
+    /* Hover Effect */
+    .floating-message-error:hover {
+        background: linear-gradient(to bottom, #f8b8b8, #fce4e4); /* Invertir gradiente al pasar */
+        box-shadow: 0px 6px 10px rgba(139, 30, 36, 0.5); /* Aumentar la sombra */
+    }
+
+    .floating-message-warning {
+        background-color: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffeeba;
+    }
+
+    .floating-message-info {
+        background-color: #d1ecf1;
+        color: #0c5460;
+        border: 1px solid #bee5eb;
+    }
+
+    /* Botón de cierre */
+    .floating-message .close-btn {
+        margin-left: 15px;
+        color: inherit;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 1;
+        background: none;
+        border: none;
+    }
+
+    .floating-message .close-btn:hover {
+        opacity: 0.7;
+    }
+
+    @@keyframes shake {
+        0%, 100% {
+            transform: translateX(0);
+        }
+        25% {
+            transform: translateX(-5px);
+        }
+        50% {
+            transform: translateX(5px);
+        }
+        75% {
+            transform: translateX(-5px);
+        }
+    }
+</style>
+<script src="~/js/modal.js"></script>
+<script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+}
+<div class="table-container">
+    <br>
+    <h2 class="text-center my-4">
+        <i class="bi bi-book"></i> Gestión de Libros
+    </h2>
+    <div class="container mb-3">
+        <div class="d-flex justify-content-end">
+            <a href="/Agregar/AgregarLibros" class="btn btn-primary btn-sm">
+                <i class="bi bi-plus-circle"></i> Agregar Libro
+            </a>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table" id="libros-table">
+            <thead>
+            <tr>
+                <th><i class="bi bi-hash"></i> Código</th>
+                <th><i class="bi bi-bookmark"></i> Nombre</th>
+                <th><i class="bi bi-person"></i> Autor</th>
+                <th><i class="bi bi-currency-dollar"></i> Precio</th>
+                <th><i class="bi bi-box"></i> Cantidad</th>
+                <th><i class="bi bi-tools"></i> Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Filas generadas dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section stylesheets_inferiores {
+<script>
+    document.addEventListener("DOMContentLoaded", async () => {
+        const tableBody = document.querySelector("#libros-table tbody");
+
+        async function cargarLibros() {
+            try {
+                const response = await fetch("/api/GestionarLibrosAPI");
+                if (!response.ok) {
+                    throw new Error("Error al cargar los libros.");
+                }
+                const libros = await response.json();
+
+                tableBody.innerHTML = "";
+                libros.forEach(libro => {
+                    const row = `
+                        <tr>
+                            <td>${libro.libCodigo}</td>
+                            <td>${libro.libNombre}</td>
+                            <td>${libro.libAutor}</td>
+                            <td>S/ ${libro.libPrecio.toFixed(2)}</td>
+                            <td>${libro.libCantidad}</td>
+                            <td class="action-buttons">
+                                <a href="/Editar/EditarLibros?id=${libro.libCodigo}" class="btn btn-warning btn-sm">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <button class="btn btn-danger btn-sm" onclick="eliminarLibro('${libro.libCodigo}')">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    `;
+                    tableBody.insertAdjacentHTML("beforeend", row);
+                });
+            } catch (error) {
+                alert("Error al cargar los libros: " + error.message);
+            }
+        }
+
+        async function eliminarLibro(id) {
+            if (!confirm("¿Está seguro de eliminar este libro?")) return;
+
+            try {
+                const response = await fetch(`/api/GestionarLibrosAPI/${id}`, { method: "DELETE" });
+                if (!response.ok) {
+                    throw new Error("Error al eliminar el libro.");
+                }
+                alert("Libro eliminado.");
+                cargarLibros();
+            } catch (error) {
+                alert("Error al eliminar el libro: " + error.message);
+            }
+        }
+
+        cargarLibros();
+    });
+</script>
+}

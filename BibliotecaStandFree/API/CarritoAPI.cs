@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using BibliotecaStandFree.Data;
 using BibliotecaStandFree.Models;
-using Newtonsoft.Json;
+using BibliotecaStandFree.Utils;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BibliotecaStandFree.API
 {
@@ -17,19 +19,29 @@ namespace BibliotecaStandFree.API
             _context = context;
         }
 
+        /// <summary>
+        /// Agregar un producto al carrito
+        /// </summary>
+        /// <param name="productoId">ID del producto</param>
+        /// <param name="cantidad">Cantidad</param>
+        /// <param name="tipo">Tipo ("libro" o "carta")</param>
         [HttpPost("agregar/{productoId}/{cantidad}/{tipo}")]
         public IActionResult AgregarAlCarrito(string productoId, int cantidad, string tipo)
         {
-            // Obtiene el carrito de la sesión, o inicializa uno nuevo si no existe
-            var carrito = HttpContext.Session.GetObjectFromJson<Dictionary<string, CarritoItem>>("Carrito") ?? new Dictionary<string, CarritoItem>();
+            if (cantidad <= 0)
+            {
+                return BadRequest(new { mensaje = "La cantidad debe ser mayor a 0." });
+            }
 
-            // Manejar productos según su tipo
+            // Obtener el carrito desde la sesión
+            var carrito = CarritoHelper.ObtenerCarrito(HttpContext.Session);
+
             if (tipo == "libro")
             {
                 var libro = _context.Libros.FirstOrDefault(l => l.LibCodigo == productoId);
-                if (libro == null || libro.LibCantidad < cantidad)
+                if (libro == null)
                 {
-                    return BadRequest(new { mensaje = "El libro no existe o no hay suficiente stock." });
+                    return BadRequest(new { mensaje = "El libro no existe." });
                 }
 
                 if (carrito.ContainsKey(productoId))
@@ -48,16 +60,13 @@ namespace BibliotecaStandFree.API
                         Imagen = libro.LibFoto
                     };
                 }
-
-                libro.LibCantidad -= cantidad; // Reduce el stock
-                _context.SaveChanges();
             }
             else if (tipo == "carta")
             {
                 var carta = _context.Cartas.FirstOrDefault(c => c.CarCodigo == productoId);
-                if (carta == null || carta.CarCantidad < cantidad)
+                if (carta == null)
                 {
-                    return BadRequest(new { mensaje = "La carta no existe o no hay suficiente stock." });
+                    return BadRequest(new { mensaje = "La carta no existe." });
                 }
 
                 if (carrito.ContainsKey(productoId))
@@ -76,54 +85,92 @@ namespace BibliotecaStandFree.API
                         Imagen = carta.CarFoto
                     };
                 }
-
-                carta.CarCantidad -= cantidad; // Reduce el stock
-                _context.SaveChanges();
+            }
+            else
+            {
+                return BadRequest(new { mensaje = "Tipo de producto no válido." });
             }
 
-            // Guarda el carrito en la sesión
-            HttpContext.Session.SetObjectAsJson("Carrito", carrito);
+            // Guardar el carrito actualizado en la sesión
+            CarritoHelper.GuardarCarrito(HttpContext.Session, carrito);
 
             return Ok(new { mensaje = "Producto añadido al carrito.", carrito });
         }
 
+        /// <summary>
+        /// Ver el contenido del carrito
+        /// </summary>
         [HttpGet("ver")]
         public IActionResult VerCarrito()
         {
-            var carrito = HttpContext.Session.GetObjectFromJson<Dictionary<string, CarritoItem>>("Carrito") ?? new Dictionary<string, CarritoItem>();
+            var carrito = CarritoHelper.ObtenerCarrito(HttpContext.Session);
             return Ok(carrito);
         }
-        
-        [HttpDelete("eliminar/{productoId}/{tipoProducto}")]
-        public IActionResult EliminarDelCarrito(string productoId, string tipoProducto)
-        {
-            // Obtener el carrito de la sesión
-            var carrito = HttpContext.Session.GetObjectFromJson<Dictionary<string, CarritoItem>>("carrito") ?? new Dictionary<string, CarritoItem>();
 
-            // Verificar si el producto existe en el carrito
+        /// <summary>
+        /// Eliminar un producto del carrito
+        /// </summary>
+        /// <param name="productoId">ID del producto a eliminar</param>
+        [HttpDelete("eliminar/{productoId}")]
+        public IActionResult EliminarDelCarrito(string productoId)
+        {
+            var carrito = CarritoHelper.ObtenerCarrito(HttpContext.Session);
+
             if (carrito.ContainsKey(productoId))
             {
-                // Eliminar el producto del carrito
                 carrito.Remove(productoId);
+                CarritoHelper.GuardarCarrito(HttpContext.Session, carrito);
 
-                // Actualizar el carrito en la sesión
-                HttpContext.Session.SetObjectAsJson("carrito", carrito);
-
-                return Ok(new { mensaje = "Producto eliminado del carrito exitosamente." });
+                return Ok(new { mensaje = "Producto eliminado del carrito.", carrito });
             }
 
             return BadRequest(new { mensaje = "El producto no existe en el carrito." });
         }
 
-    }
+        /// <summary>
+        /// Confirmar la compra y actualizar el stock
+        /// </summary>
+        [HttpPost("confirmar")]
+        public IActionResult ConfirmarCompra()
+        {
+            var carrito = CarritoHelper.ObtenerCarrito(HttpContext.Session);
 
-    public class CarritoItem
-    {
-        public string Id { get; set; }
-        public string Nombre { get; set; }
-        public decimal Precio { get; set; }
-        public int Cantidad { get; set; }
-        public string Tipo { get; set; }
-        public string Imagen { get; set; }
+            if (!carrito.Any())
+            {
+                return BadRequest(new { mensaje = "El carrito está vacío." });
+            }
+
+            foreach (var item in carrito.Values)
+            {
+                if (item.Tipo == "libro")
+                {
+                    var libro = _context.Libros.FirstOrDefault(l => l.LibCodigo == item.Id);
+                    if (libro == null || libro.LibCantidad < item.Cantidad)
+                    {
+                        return BadRequest(new { mensaje = $"No hay suficiente stock del libro: {item.Nombre}." });
+                    }
+
+                    libro.LibCantidad -= item.Cantidad; // Reducir stock
+                }
+                else if (item.Tipo == "carta")
+                {
+                    var carta = _context.Cartas.FirstOrDefault(c => c.CarCodigo == item.Id);
+                    if (carta == null || carta.CarCantidad < item.Cantidad)
+                    {
+                        return BadRequest(new { mensaje = $"No hay suficiente stock de la carta: {item.Nombre}." });
+                    }
+
+                    carta.CarCantidad -= item.Cantidad; // Reducir stock
+                }
+            }
+
+            // Guardar los cambios en la base de datos
+            _context.SaveChanges();
+
+            // Vaciar el carrito después de confirmar la compra
+            CarritoHelper.GuardarCarrito(HttpContext.Session, new Dictionary<string, CarritoItem>());
+
+            return Ok(new { mensaje = "Compra confirmada exitosamente." });
+        }
     }
 }

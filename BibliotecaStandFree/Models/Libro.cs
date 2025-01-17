@@ -36,11 +36,7 @@ namespace BibliotecaStandFree.Models
 
         [Column("libSinopsis")]
         public string LibSinopsis { get; set; } // Sinopsis del libro
-
-        [Column("libURLLibro")]
-        [Url]
-        public string LibURLLibro { get; set; } // URL del libro (opcional)
-
+        
         [Column("libFoto")]
         public string LibFoto { get; set; } // Ruta o URL de la imagen del libro
 
